@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
-import Frame from '../../public/images/Frame.jpg'
-
+import Frame from '../public/images/Frame.jpg'
+// import Frame from '../../public/images/Frame.jpg'
 import Image from 'next/image'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
