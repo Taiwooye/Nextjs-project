@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 
-export default function Welcome() {
+export default function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
