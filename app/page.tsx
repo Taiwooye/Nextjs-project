@@ -1,50 +1,85 @@
 'use client'
-import React, { useState, useEffect } from "react";
-import Image from 'next/image';
+import React from 'react'
+// import Frame from '../../public/images/Frame.jpg'
+import Frame from '../public/images/Frame.jpg'
+import Image from 'next/image'
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default function Welcome() {
-  const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch('https://dummyjson.com/products?limit=15') 
-      .then((response) => response.json())
-      .then((data) =>{
-        console.log(data);
-        setData(data.products);
-      }
+function page() {
 
-     );
-  }, []);
+  const [username, setUsername] = useState('brickeardn');
+  const [password, setPassword] = useState('bMQnPttV');
 
-  return (
-    <main className="grid 
-    sm:grid-cols-2
-    sm:gap-x-5
-    sm:gap-y-5
-    md:grid-cols-3
-    lg:grid-cols-4
-    gap-y-4
-      ">
-      {data.map((item) => (
-        <div className="card w-98 bg-black text-white h-96 shadow-xl" key={item.id}>
-          <figure>
-            <img src={item.thumbnail} alt="Shoes" /> 
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">
-              {item.title}
-              <div className="badge badge-secondary">NEW</div>
-            </h2>
-            <p>{item.description}</p>
-            <div className="card-actions justify-end">
-              <div className="badge badge-outline w-24 h-10 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% "
-              >{item.category}</div> 
-              <div className="badge badge-outline w-24 h-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 "
-              >{item.price}</div> 
-            </div>
-          </div>
-        </div>
-      ))}
-    </main>
-  );
+  const router = useRouter();
+
+  const handleLogin = async (e:any) => {
+    e.preventDefault();
+
+    alert('Login Clicked');
+
+    const response = await fetch('https://dummyjson.com/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      router.push("/home", {scroll: false})
+    } else {
+    
+      alert("can't log-in")
+    }
+
+  };
+
+ return(
+<div className="form-control grid gap-2 place-content-center h-65 w-88">
+  <div className=' bg-blue p-5 w-58'>
+  <div className="h-auto max-w-full">
+  <Image src={Frame}
+   alt='na image' 
+    className='object-cotain'/>
+  
+  </div>
+  <label className="input-group mb-4">
+        
+          <input
+            type="text"
+            value={username}
+            placeholder='username'
+            onChange={(e) => setUsername(e.target.value)}
+            className="input input-bordered bg-white w-full mt-5"
+          />
+            </label>
+
+
+  <label className="input-group mb-4">
+          <input
+          placeholder='password'
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+     className="input input-bordered bg-white w-full" />
+  </label>
+  
+  <button
+   type="button" onClick={handleLogin}
+   className="btn btn-xs sm:btn-sm 
+  md:btn-md
+   lg:btn-l w-34 h-48 
+    bg-white"
+  >submit</button>
+ 
+  </div>
+</div>
+ )
 }
+
+export default page
