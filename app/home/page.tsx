@@ -73,7 +73,7 @@ function page() {
    type="button" onClick={handleLogin}
    className="btn btn-xs sm:btn-sm 
   md:btn-md
-   lg:btn-l w-34 h-48 
+   lg:btn-l w-34
     bg-white"
   >submit</button>
  

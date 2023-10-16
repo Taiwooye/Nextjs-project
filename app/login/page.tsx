@@ -2,6 +2,17 @@
 import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 
+
+interface product{
+  id: number,
+  price:number,
+  thumbnail:string,
+  title:string,
+  description:string,
+  stock:number,
+
+}
+
 export default function Welcome() {
   const [data, setData] = useState([]);
 
@@ -25,7 +36,7 @@ export default function Welcome() {
     lg:grid-cols-4
     gap-y-4
       ">
-      {data.map((item) => (
+      {data.map((item:product) => (
         <div className="card w-98 bg-black text-white h-96 shadow-xl" key={item.id}>
           <figure>
             <img src={item.thumbnail} alt="Shoes" /> 
@@ -38,9 +49,9 @@ export default function Welcome() {
             <p>{item.description}</p>
             <div className="card-actions justify-end">
               <div className="badge badge-outline w-24 h-10 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% "
-              >{item.category}</div> 
+              >stock {item.stock}</div> 
               <div className="badge badge-outline w-24 h-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 "
-              >{item.price}</div> 
+              >{`$: ${item.price}`}</div> 
             </div>
           </div>
         </div>
