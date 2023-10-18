@@ -1,11 +1,8 @@
 'use client'
 import React from 'react'
-import Frame from '../public/images/Frame.jpg'
-// import Frame from '../../public/images/Frame.jpg'
 import Image from 'next/image'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
 
 function page() {
 
@@ -40,16 +37,15 @@ function page() {
   };
 
  return(
-<div className="form-control grid gap-2 place-content-center h-65 w-88">
-  <div className=' bg-gray-500 p-5 w-58'>
-  <div className="h-auto max-w-full">
-  <Image src={Frame}
-   alt='na image' 
-    className='object-cotain'/>
-  
-  </div>
-  <label className="input-group mb-4">
-        
+  <div className="hero min-h-screen bg-stone-600">
+  <div className="hero-content flex-col lg:flex-row-reverse">
+
+    <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 w-68">
+      <form className="card-body">
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Email</span>
+          </label>
           <input
             type="text"
             value={username}
@@ -57,28 +53,33 @@ function page() {
             onChange={(e) => setUsername(e.target.value)}
             className="input input-bordered bg-white w-full mt-5"
           />
-            </label>
-
-
-  <label className="input-group mb-4">
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Password</span>
+          </label>
           <input
           placeholder='password'
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
      className="input input-bordered bg-white w-full" />
-  </label>
-  
-  <button
+          <label className="label">
+            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+          </label>
+        </div>
+        <div className="form-control mt-6">
+        <button
    type="button" onClick={handleLogin}
    className="btn btn-xs sm:btn-sm 
-  md:btn-md
-   lg:btn-l w-34
-    bg-white"
-  >submit</button>
- 
+  md:btn-md lg:btn-l w-34 bg-white">submit</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
+
+
  )
 }
 

@@ -29,15 +29,18 @@ export default function Welcome() {
 
   return (
     <main className="grid 
+    bg-gray-300
     sm:grid-cols-2
     sm:gap-x-5
     sm:gap-y-5
-    md:grid-cols-3
+    md:grid-cols-2
     lg:grid-cols-4
-    gap-y-4
+    py-8
+    gap-x-4 gap-y-4
       ">
       {data.map((item:product) => (
-        <div className="card w-98 bg-black text-white h-96 shadow-xl" key={item.id}>
+        <div className="card w-68 bg-black
+         text-white h-96 shadow-xl border-none" key={item.id}>
           <figure>
             <img src={item.thumbnail} alt="Shoes" /> 
           </figure>

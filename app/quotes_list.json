@@ -1,0 +1,77 @@
+[
+    {
+        "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+        "author": "Nelson Mandela",
+        "category": "inspirational"
+    },
+    {
+        "quote": "Education is the most powerful weapon which you can use to change the world.",
+        "author": "Nelson Mandela",
+        "category": "education"
+    },
+    {
+        "quote": "It always seems impossible until it's done.",
+        "author": "Nelson Mandela",
+        "category": "inspirational"
+    },
+    {
+        "quote": "The road to success is always under construction.",
+        "author": "Lily Tomlin",
+        "category": "inspirational"
+    },
+    {
+        "quote": "I always wanted to be somebody, but now I realize I should have been more specific.",
+        "author": "Lily Tomlin",
+        "category": "humor"
+    },
+    {
+        "quote": "The trouble with the rat race is that even if you win, you're still a rat.",
+        "author": "Lily Tomlin",
+        "category": "humor"
+    },
+    {
+        "quote": "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful.",
+        "author": "Albert Schweitzer",
+        "category": "success"
+    },
+    {
+        "quote": "The purpose of human life is to serve, and to show compassion and the will to help others.",
+        "author": "Albert Schweitzer",
+        "category": "compassion"
+    },
+    {
+        "quote": "Do something wonderful, people may imitate it.",
+        "author": "Albert Schweitzer",
+        "category": "inspirational"
+    },
+    {
+        "quote": "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.",
+        "author": "Albert Einstein",
+        "category": "imagination"
+    },
+    {
+        "quote": "The only source of knowledge is experience.",
+        "author": "Albert Einstein",
+        "category": "knowledge"
+    },
+    {
+        "quote": "Peace cannot be kept by force; it can only be achieved by understanding.",
+        "author": "Albert Einstein",
+        "category": "peace"
+    },
+    {
+        "quote": "Float like a butterfly, sting like a bee. The hands can't hit what the eyes can't see.",
+        "author": "Muhammad Ali",
+        "category": "boxing"
+    },
+    {
+        "quote": "Don't count the days; make the days count.",
+        "author": "Muhammad Ali",
+        "category": "inspirational"
+    },
+    {
+        "quote": "Service to others is the rent you pay for your room here on earth.",
+        "author": "Muhammad Ali",
+        "category": "service"
+    }
+]
