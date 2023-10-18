@@ -30,17 +30,35 @@ function quote({params}: {params: {slug:string}}) {
      setData(filterQuote);
   }, []);
 
+  const Images =  [{
+    'Muhammad Ali': {
+         "images": "ali.jpg"
+     },
+ 
+     'Nelson Mandela':{
+         "images": "Nelson.jpg"
+     },
+ 
+     'Lily Tomlin': {
+         "images": "lily.jpg"
+     },    
+     'Albert Einstein':{
+         "images": "Albert-Einstein.jpg"
+     },
+     'Albert Schweitzer':{
+         "images": "Albert-Schweitzer.jpg"
+     },
+      }
+ ]
+
+ const img_single = Images[0];
+
+
 
   return (
-<main className="bg-gray-300 flex justify-center">
-
-<div className="text-sm breadcrumbs">
-  <ul>
-    <li><a href="/quote_author">Authors</a></li> 
-    <li><a>{decodeParam}</a></li> 
-  </ul>
-</div>
-
+<div className="hero min-h-screen w-full" style={{backgroundImage: `url(/images/${img_single[decodeParam].images})`}}>
+  <div className="hero-overlay bg-opacity-50"></div>
+  
 <div className="
     sm:grid-cols-2
     sm:gap-x-5
@@ -48,9 +66,12 @@ function quote({params}: {params: {slug:string}}) {
     md:grid-cols-2
     lg:grid-cols-3
     my-8
-    grid gap-x-4 gap-y-4">
+    grid gap-x-4 gap-y-4
+    py-5
+    "
+    >
       {data != undefined && data.map((item:quoteType) => (
-          <div className="card w-96 bg-blue-800 text-primary-content border-none">
+          <div className="card w-96  card-bordered border-slate-400 bg-neutral text-primary-content border-4 ">
           <div className="card-body">
             <h2 className="card-title">{item.author}</h2>
             <p>{item.quote}</p>
@@ -78,7 +99,16 @@ function quote({params}: {params: {slug:string}}) {
 </div>
 
 
-</main>
+  <div className="hero-content text-center text-neutral-content">
+    <div className="max-w-md">
+   {/*    <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <button className="btn btn-primary">Get Started</button> */}
+
+      
+    </div>
+  </div>
+</div>
 )
 }
 
