@@ -1,8 +1,5 @@
 'use client'
 import React, { useState, useEffect } from "react";
-import Image from 'next/image';
-import { WhatsappShareButton, WhatsappIcon} from 'next-share'
-import { LinkedinShareButton, LinkedinIcon} from 'next-share'
 import Quotes from '../quotes_list.json'
 import Link from "next/link";
 
