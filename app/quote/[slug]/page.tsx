@@ -9,9 +9,17 @@ interface quoteType{
   quote:string,
   category:string
 }
+
+interface imgObj{
+  images:string
+}
+
+interface myImage {
+  [key: string]: imgObj;
+}
 function quote({params}: {params: {slug:string}}) {
 
-  const decodeParam = decodeURIComponent(params.slug);
+  const decodeParam:string = decodeURIComponent(params.slug);
 
   const [data, setData] = useState<quoteType[] | undefined>([]);
 
@@ -28,7 +36,7 @@ function quote({params}: {params: {slug:string}}) {
      setData(filterQuote);
   }, []);
 
-  const Images =  [{
+  const Images:myImage =  {
     'Muhammad Ali': {
          "images": "ali.jpg"
      },
@@ -47,14 +55,14 @@ function quote({params}: {params: {slug:string}}) {
          "images": "Albert-Schweitzer.jpg"
      },
       }
- ]
+ 
 
- const img_single = Images[0];
+ const img_single:myImage = Images;
 
-
+let myImage:string = img_single[decodeParam]["images"];
 
   return (
-<div className="hero min-h-screen w-full" style={{backgroundImage: `url(/images/${img_single[decodeParam].images})`}}>
+<div className="hero min-h-screen w-full" style={{backgroundImage: `url(/images/${myImage})`}}>
   <div className="hero-overlay bg-opacity-50"></div>
   
 <div className="

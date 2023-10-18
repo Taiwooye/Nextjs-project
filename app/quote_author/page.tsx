@@ -9,9 +9,18 @@ interface quoteType{
   quote:string,
   category:string
 }
+
+interface imgObj{
+    images:string
+  }
+  
+  interface myImage {
+    [key: string]: imgObj;
+  }
+
 function quoteAuthor() {
 
-   const Images =  [{
+   const Images:myImage =  {
        'Muhammad Ali': {
             "images": "ali.jpg"
         },
@@ -29,8 +38,8 @@ function quoteAuthor() {
         'Albert Schweitzer':{
             "images": "Albert-Schweitzer.jpg"
         },
-         }
-    ]
+    }
+    
 
     const img_single = Images[0];
 
@@ -76,7 +85,15 @@ function quoteAuthor() {
     shadow-xl
     image-full
     grid gap-x-4 gap-y-4">
-      {data.map((item:quoteType) => (
+      {data.map((item:quoteType) => {
+
+         const img_single:myImage = Images;
+
+         let myImage:string = img_single[item.author]["images"];
+
+        return(
+
+        
           <div className="card w-96 bg-neutral text-primary-content border-none">
             <figure><img src={"/images/"+img_single[item.author].images} alt="Shoes" /></figure>
           <div className="card-body">
@@ -94,7 +111,9 @@ function quoteAuthor() {
           </div>
         </div>
 
-      ))}
+      )}
+      
+      )}
 </div> 
 
 
